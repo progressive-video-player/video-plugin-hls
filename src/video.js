@@ -18,8 +18,8 @@ export default class VideoPlugin extends HTMLElement {
     this.parent = null;
   }
 
-  loadVideo(videoElement, url) {
-    console.log(`==> VideoPlugin.loadVideo() elem: ${videoElement}, url: ${url}`);
+  loadVideo(/* videoElement, url */) {
+    // console.log(`==> VideoPlugin.loadVideo() elem: ${videoElement}, url: ${url}`);
     if (!this.loaded) {
       this.loaded = true;
       return true;
@@ -28,7 +28,7 @@ export default class VideoPlugin extends HTMLElement {
   }
 
   unloadVideo() {
-    console.log(`==> VideoPlugin.unloadVideo()`);
+    // console.log(`==> VideoPlugin.unloadVideo()`);
     if (this.loaded) {
       this.loaded = false;
     }

@@ -1,2 +1,2 @@
 # video-plugin-hls
-progressive-video-player - a plugin for HLS playback
+progressive-video-player - video plugin for HLS playback

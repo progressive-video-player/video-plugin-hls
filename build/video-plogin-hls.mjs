@@ -18,8 +18,8 @@ class VideoPlugin extends HTMLElement {
     this.parent = null;
   }
 
-  loadVideo(videoElement, url) {
-    console.log(`==> VideoPlugin.loadVideo() elem: ${videoElement}, url: ${url}`);
+  loadVideo(/* videoElement, url */) {
+    // console.log(`==> VideoPlugin.loadVideo() elem: ${videoElement}, url: ${url}`);
     if (!this.loaded) {
       this.loaded = true;
       return true;
@@ -28,11 +28,15 @@ class VideoPlugin extends HTMLElement {
   }
 
   unloadVideo() {
-    console.log(`==> VideoPlugin.unloadVideo()`);
+    // console.log(`==> VideoPlugin.unloadVideo()`);
     if (this.loaded) {
       this.loaded = false;
     }
   }
+}
+
+if (!customElements) {
+  throw new Error('Custom Elements not supported');
 }
 
 const name = 'video-plugin-hls';
@@ -40,5 +44,5 @@ const name = 'video-plugin-hls';
 if (customElements.get(name)) {
   console.log(`Custom element "${name}" already defined`);
 } else {
-  window.customElements.define(name, VideoPlugin);
+  customElements.define(name, VideoPlugin);
 }
